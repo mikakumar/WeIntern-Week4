@@ -41,5 +41,9 @@
 /front/*.tsbuildinfo
 /front/next-env.d.ts
 
+#firebase config
+/front/src/api/firebase-secret.js
+
 #BACK-FACING IGNORE
 /back/node_modules
+/back/config/.env

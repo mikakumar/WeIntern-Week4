@@ -53,8 +53,30 @@
      @apply flex gap-4;
    }
 
+   .checkup-container{
+    @apply bg-black text-white h-[75vh] w-[35vw] ml-[30vw] mt-[10vh] py-10 flex flex-col items-center text-center rounded-lg;
+   }
 
+   .checkin-container{
+    @apply bg-black text-white h-[75vh] w-[35vw] ml-[30vw] mt-[10vh] py-10 flex flex-col items-center text-center rounded-lg;
+   }
 
+   .check-header{
+    @apply text-2xl mb-[3vh];
+   }
+
+   .input-box{
+    @apply w-[25vw] rounded-md p-4 px-12 -ml-[0.5vw] border border-gray-100 text-white placeholder:text-yellow-600 inset-0;
+    background-color:rgb(24, 6, 0);
+  }
+
+  .input-box:focus{
+    @apply border-2 border-white bg-white text-black;
+  }
+
+  .form-submit{
+    @apply bg-yellow-900 px-3 py-2 relative rounded-md cursor-pointer;
+  }
  
 }
 

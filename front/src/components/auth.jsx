@@ -1,7 +1,7 @@
 'use client';
 
 import {auth, gAuth, db} from '@/api/firebase-config';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 
 import {doc, getDoc, setDoc} from 'firebase/firestore';
 
@@ -28,13 +28,6 @@ export const signInFunc = async(email, password) => {
     }
 };
 
-export const googleSignInFunc = async() =>{
-    try{
-        await signInWithPopup(auth, gAuth);
-    }catch(error){
-        console.log(`Error: ${error}`);
-    }
-}
 
 export const registerFunc = async(name, email, password) =>{
     try{

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import {DM_Serif_Display} from '@next/font/google';
+import { ContextProvider } from "../Context";
+
 import Navbar from "@/components/navbar";
 
 const dmSerif = DM_Serif_Display({
@@ -23,8 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSerif.variable}`}>
+        <ContextProvider>
         <Navbar />
         {children}
+        </ContextProvider>
       </body>
     </html>
   );

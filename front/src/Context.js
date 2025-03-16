@@ -1,30 +1,29 @@
-'use client';
+"use client";
 
 import {createContext, useState, useEffect} from 'react';
 
-const appContext = createContext();
-const tlogin = localStorage.getItem('loggedIn');
 
+const GoldContext = createContext();
 
 function ContextProvider({children}){
-    const [loggedIn, setLoggedIn] = useState();
+    const [loggedIn, setLoggedIn] = useState(false);
+    
+    
 
     useEffect(()=>{
-        if(loggedIn == undefined){
+        
+        const tlogin = localStorage.getItem('loggedIn');
+
+        if(tlogin == true){
+            setLoggedIn(true);
+            localStorage.setItem(true);
+        }
+
+        if(tlogin == false){
             setLoggedIn(false);
+            localStorage.setItem(false);
         }
         
-        switch(tlogin){
-            case true: {
-                setLoggedIn(true);
-            }
-            case false: {
-                setLoggedIn(false);
-            }
-            default: {
-                setLoggedIn(false);
-            }
-        }
     }, []);
 
     const toggleLogIn = () =>{
@@ -38,10 +37,10 @@ function ContextProvider({children}){
     }
 
     return(
-        <appContext.Provider value={{toggleLogIn, toggleLogOut}}>
+        <GoldContext.Provider value={{loggedIn, toggleLogIn, toggleLogOut}}>
             {children}
-        </appContext.Provider>
+        </GoldContext.Provider>
     )
 }
 
-export {appContext, ContextProvider};
+export {GoldContext, ContextProvider};
