@@ -10,8 +10,10 @@ import { FaEyeLowVision } from "react-icons/fa6";
 
 import { FaGoogle } from "react-icons/fa";
 
-import { GoldContext } from '../Context';
 import { registerFunc } from "./auth";
+
+import { GoldContext } from '../Context';
+
 
 const SignUp = () => {
 
@@ -19,7 +21,8 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const {toggleLogIn} = useContext(GoldContext)
+
+    const {toggleLogIn} = useContext(GoldContext);
 
     const dragUp = () =>{
         registerFunc(tname, email, password);

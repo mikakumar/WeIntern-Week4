@@ -1,10 +1,14 @@
 "use client";
 
 import { useContext, useState } from "react";
+import { useRouter } from "next/router";
+
+import { auth, gAuth } from "@/api/firebase-config";
 import { signInWithPopup } from "firebase/auth";
 import { signInFunc} from "./auth";
+
 import { GoldContext } from "../Context";
-import { auth, gAuth } from "@/api/firebase-config";
+
 
 const SignIn = () =>{
 
@@ -22,6 +26,7 @@ const SignIn = () =>{
         signInWithPopup(auth, gAuth)
         .then(()=>{
             toggleLogIn();
+            
         }).catch((error)=>{
             console.log(`Error: ${error}`)
         })

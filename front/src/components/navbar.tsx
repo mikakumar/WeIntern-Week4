@@ -13,7 +13,6 @@ import { signOutFunc } from "./auth";
 const Navbar = () =>{
 
     const {toggleLogOut} = useContext(GoldContext);
-    const [activeLink, setActiveLink] = useState('');
 
     const loggedIn = localStorage.getItem('loggedIn');
 
@@ -43,7 +42,7 @@ const Navbar = () =>{
                 </div>
                 <div className="user-menu">
                     <ul>
-                        <Link href='' onClick={kickOut}>
+                        <Link href='/signin' onClick={kickOut}>
                         <li>Sign Out</li>
                         </Link>
                     </ul>
