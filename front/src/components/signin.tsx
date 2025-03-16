@@ -43,7 +43,7 @@ const SignIn = () =>{
                 </div>
             </form>
             <div>
-                <button className="form-submit" >Sign In With Google</button>
+                <button className="form-submit" onClick={googleDragIn} >Sign In With Google</button>
             </div>
         </div>
         </>
