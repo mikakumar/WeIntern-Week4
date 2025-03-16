@@ -4,7 +4,7 @@ import SignIn from '@/components/signin';
 const SignSwitch = ({ type }) =>{
     return(
         <>
-        <div className="checkup-container">
+        <div className={type == "signup" ?"checkup-container":"checkin-container"}>
             <h1 className="check-header"> 
                 {type == "signin" ? "Welcome back!" : "Sign Up Today!"}
             </h1>
@@ -14,7 +14,7 @@ const SignSwitch = ({ type }) =>{
                     <SignIn />
                     <hr className="mb-5 text-white mt-7" />
                     <p className="">Not a member?   
-                        <a className="underline relative" href="/signin "> Sign up here!</a>
+                        <a className="underline relative text-yellow-800" href="/signin "> Sign up here!</a>
                     </p>
                 </div>}
                 {type == "signup" && 
@@ -22,7 +22,7 @@ const SignSwitch = ({ type }) =>{
                     <SignUp />  
                     <hr className="mb-5 text-white mt-5" />
                     <p className="">Already a member?   
-                        <a className="underline  relative" href="/signin "> Sign in here!</a>
+                        <a className="underline  relative text-yellow-800" href="/signin "> Sign in here!</a>
                     </p>
                 </div>}
             </div>

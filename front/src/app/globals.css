@@ -54,7 +54,7 @@
    }
 
    .checkup-container{
-    @apply bg-black text-white h-[75vh] w-[35vw] ml-[30vw] mt-[10vh] py-10 flex flex-col items-center text-center rounded-lg;
+    @apply bg-black text-white h-[80vh] w-[35vw] ml-[30vw] mt-[8vh] py-10 flex flex-col items-center text-center rounded-lg;
    }
 
    .checkin-container{
@@ -66,7 +66,7 @@
    }
 
    .input-box{
-    @apply w-[25vw] rounded-md p-4 px-12 -ml-[0.5vw] border border-gray-100 text-white placeholder:text-yellow-600 inset-0;
+    @apply w-[25vw] rounded-md p-4 px-12 -ml-[0.5vw] border border-gray-100 text-yellow-600 placeholder:text-yellow-900 inset-0;
     background-color:rgb(24, 6, 0);
   }
 
@@ -74,8 +74,20 @@
     @apply border-2 border-white bg-white text-black;
   }
 
+  .input-icon{
+    @apply relative text-2xl top-10
+  }
+
   .form-submit{
     @apply bg-yellow-900 px-3 py-2 relative rounded-md cursor-pointer;
+  }
+
+  .eye-con{
+    @apply relative left-67 bottom-10 text-xl text-yellow-800;
+  }
+
+  .eye-con-focus{
+    @apply relative left-67 bottom-10 text-xl text-yellow-600;
   }
  
 }
