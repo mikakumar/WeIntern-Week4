@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { auth, gAuth } from "@/api/firebase-config";
 import { signInWithPopup } from "firebase/auth";
 import { signInFunc} from "./auth";
+import { SignInBack } from "@/api/back-fetch";
 
 
 import { MdAlternateEmail } from "react-icons/md";
@@ -51,6 +52,7 @@ const SignIn = () =>{
     const dragIn = () =>{
         signInFunc(email, password);
         toggleLogIn();
+        SignInBack(email, password);
     }
 
     const googleDragIn = () =>{

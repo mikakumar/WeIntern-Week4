@@ -12,7 +12,7 @@ const IndexRoute = require('../routes/index.route');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({credentials: true, origin:'http://localhost:4000'}));
 app.use(bodyparser.json())
 app.use(express.json());
 app.use(cookieparser());
@@ -26,9 +26,10 @@ mongoose.connect(DB_URL)
         console.log("Connected to DB!");
     }).catch((err)=>{
         console.log(`Error: ${err}`);
-    })
+    });
+    
+    app.use('/back/', IndexRoute);
 
-    app.use('/back/api', IndexRoute);
 
 app.listen(PORT, ()=>{
     console.log('Listening on PORT', PORT)

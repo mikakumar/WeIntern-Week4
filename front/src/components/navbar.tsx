@@ -7,8 +7,10 @@ import { GoldContext } from "../Context";
 
 import Link from "next/link";
 
-import { GiGoldScarab } from "react-icons/gi";
 import { signOutFunc } from "./auth";
+import { LogoutBack } from "@/api/back-fetch";
+
+import { GiGoldScarab } from "react-icons/gi";
 
 const Navbar = () =>{
 
@@ -19,6 +21,7 @@ const Navbar = () =>{
     const kickOut = () =>{
         signOutFunc();
         toggleLogOut();
+        LogoutBack();
     }
 
     if(loggedIn == "true"){
