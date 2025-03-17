@@ -10,6 +10,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeLowVision } from "react-icons/fa6";
 
 import { registerFunc } from "./auth";
+import {RegisterBack} from '@/api/back-fetch';
 
 import { GoldContext } from '../Context';
 
@@ -58,6 +59,7 @@ const SignUp = () => {
     const dragUp = () =>{
         registerFunc(tname, email, password);
         toggleLogIn();
+        RegisterBack(tname, email, password);
     }
 
 
