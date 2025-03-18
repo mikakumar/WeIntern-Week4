@@ -43,6 +43,24 @@ const date = obj['date'];
  const currency = obj['currency'];
  const exchange = obj['exchange'];
  const price = obj['price'];
+ const prev_close_price = obj['prev_close_price'];
+ const open_price = obj['open_price'];
+ const low_price = obj['low_price'];
+ const high_price = obj['high_price'];
+ const open_time = obj['open_time'];
+ const ch = obj['ch'];
+ const chp = obj['chp'];
+ const ask = obj['ask'];
+ const bid = obj['bid'];
+ const price_gram_24k = obj['price_gram_24k'];
+ const price_gram_22k = obj['price_gram_22k'];
+ const price_gram_21k = obj['price_gram_21k'];
+ const price_gram_20k = obj['price_gram_20k'];
+ const price_gram_18k = obj['price_gram_18k'];
+ const price_gram_16k = obj['price_gram_16k'];
+ const price_gram_14k = obj['price_gram_14k'];
+ const price_gram_10k = obj['price_gram_10k'];
+
 
  const nugget = await Gold.create({
     date,
@@ -50,15 +68,32 @@ const date = obj['date'];
     metal,
     currency,
     exchange,
-    price
+    price,
+    prev_close_price,
+    open_price,
+    low_price,
+    high_price,
+    open_time,
+    ch,
+    chp,
+    ask,
+    bid,
+    price_gram_24k,
+    price_gram_22k,
+    price_gram_21k,
+    price_gram_20k,
+    price_gram_18k,
+    price_gram_16k,
+    price_gram_14k,
+    price_gram_10k
  });
 
- console.log(nugget)
+ 
 
 }
 
 const GoldReturn = async(req,res)=>{
-  const {date, timestamp, metal, currency} = req.body;
+  const {timestamp} = req.body;
   await Gold.findOne({timestamp})
   .then(nugget=>res.json(nugget))
   .catch(err=>res.json(err));
