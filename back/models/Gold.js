@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const goldSchema = mongoose.Schema({
-    date: Number,
+    date: String,
     timestamp: String,
     metal: String,
     currency: String,
