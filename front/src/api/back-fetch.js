@@ -44,3 +44,40 @@ export const LogoutBack = () =>{
     if(response.success == true)
         alert('Logged Out!')
 }
+
+export const quickGoldFetch = async(symbol, currency) =>{
+    try{
+    const response =  await fetch('http://localhost:3000/back/api/fetch', {
+        headers: {'Content-Type':'application/json'},
+        method: 'POST',
+        body: JSON.stringify({symbol, currency}),  
+    })
+    if (response.status === 200){
+        alert('Registration successful!')
+    }
+    else{
+        alert('Registration failed!')
+    }
+    } catch(error){
+        alert('Something went wrong!')
+    }
+}
+   
+
+export const dateGoldFetch = async(symbol, currency, date) =>{
+    try{
+        const response =  await fetch('http://localhost:3000/back/api/fetch', {
+            headers: {'Content-Type':'application/json'},
+            method: 'POST',
+            body: JSON.stringify({symbol, currency}),  
+        })
+        if (response.status === 200){
+            alert('Registration successful!')
+        }
+        else{
+            alert('Registration failed!')
+        }
+        } catch(error){
+            alert('Something went wrong!')
+        }
+}   
