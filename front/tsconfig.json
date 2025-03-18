@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/auth.jsx", "src/components/signswitch.jsx", "src/components/configold.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/auth.jsx", "src/components/signswitch.jsx", "src/components/configold.jsx", "src/app/checkout/page.jsx"],
   "exclude": ["node_modules"]
 }
