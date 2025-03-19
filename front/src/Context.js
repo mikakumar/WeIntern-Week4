@@ -9,7 +9,7 @@ const GoldContext = createContext();
 function ContextProvider({children}){
     const [clientSecret, setClientSecret] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
-    
+    const [liveupdate, setLiveUpdate] = useState([]);
     
 
     useEffect(()=>{
@@ -54,8 +54,12 @@ function ContextProvider({children}){
         localStorage.setItem('loggedIn', false);
     }
 
+    const saveUpdate = (nugget) =>{
+        setLiveUpdate(nugget);
+    }
+
     return(
-        <GoldContext.Provider value={{loggedIn, toggleLogIn, toggleLogOut, clientSecret}}>
+        <GoldContext.Provider value={{loggedIn, toggleLogIn, toggleLogOut, clientSecret, liveupdate, saveUpdate}}>
             {children}
         </GoldContext.Provider>
     )

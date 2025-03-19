@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Markazi+Text&display=swap');
+
 @import "tailwindcss";
 @import "react-datepicker/dist/react-datepicker.css";
 
@@ -7,6 +9,9 @@
 :root {
   --background: #170b00;
   --foreground: #171717;
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -30,12 +35,20 @@
 }
 
 @layer components{
+
+  .mk-font{
+    font-family: "Markazi Text", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
   .nav-container{
     @apply bg-black text-white h-[10vh] w-[100%] px-[4vw] flex justify-between;
   }
 
   .nav-img{
-    @apply h-[7vh] w-[10vw] -mx-[3vw];
+    @apply h-[8vh] w-[10vw] -mx-[3vw] text-yellow-800; 
   }
 
   .nav-menu{
@@ -83,14 +96,6 @@
     @apply bg-yellow-900 px-3 py-2 relative rounded-md cursor-pointer;
   }
 
-  .eye-con{
-    @apply relative left-67 bottom-10 text-xl text-yellow-800;
-  }
-
-  .eye-con-focus{
-    @apply relative left-67 bottom-10 text-xl text-yellow-600;
-  }
- 
 }
 
 

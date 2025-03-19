@@ -68,7 +68,7 @@ const Configold = () =>{
         dateFormat="yyyy-MM-dd"
         onChange={date=>formatDateFn(date)}
         />
-            <input type="submit" value="Submit" onClick={alert(gdate)}/>
+            <input type="submit" value="Submit"/>
         </form>
     </div>
     </>)

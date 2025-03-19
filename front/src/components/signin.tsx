@@ -1,6 +1,7 @@
 "use client";
 
 import { useContext, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { auth, gAuth } from "@/api/firebase-config";
 import { signInWithPopup } from "firebase/auth";
@@ -16,7 +17,9 @@ import { FaEyeLowVision } from "react-icons/fa6";
 import { GoldContext } from "../Context";
 
 
+
 const SignIn = () =>{
+
 
     const {toggleLogIn} = useContext(GoldContext);
 
@@ -27,6 +30,8 @@ const SignIn = () =>{
     const [passwordFlip, setPasswordFlip] = useState(false);
 
     const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const router = useRouter();
 
     const emailOn = () =>{
         setEmailFlip(true);
@@ -52,6 +57,7 @@ const SignIn = () =>{
     const dragIn = () =>{
         signInFunc(email, password);
         toggleLogIn();
+        router.push('/dashboard')
         SignInBack(email, password);
     }
 
@@ -59,6 +65,8 @@ const SignIn = () =>{
         signInWithPopup(auth, gAuth)
         .then(()=>{
             toggleLogIn();
+            router.push('/dashboard');
+            SignInBack(email, password);
             
         }).catch((error)=>{
             console.log(`Error: ${error}`)

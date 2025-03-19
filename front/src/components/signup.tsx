@@ -2,6 +2,7 @@
 
 
 import { useContext, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { RiProfileLine } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
@@ -13,6 +14,7 @@ import { registerFunc } from "./auth";
 import {RegisterBack} from '@/api/back-fetch';
 
 import { GoldContext } from '../Context';
+
 
 
 const SignUp = () => {
@@ -27,8 +29,9 @@ const SignUp = () => {
 
     const [passwordVisible, setPasswordVisible] = useState(false);
 
-
     const {toggleLogIn} = useContext(GoldContext);
+
+    const router = useRouter();
 
     const nameOn = () =>{
         setNameFlip(true);
@@ -59,6 +62,7 @@ const SignUp = () => {
     const dragUp = () =>{
         registerFunc(tname, email, password);
         toggleLogIn();
+        router.push('/dashboard');
         RegisterBack(tname, email, password);
     }
 
