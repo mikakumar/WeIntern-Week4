@@ -69,36 +69,36 @@ const SignUp = () => {
             <form action={dragUp}>
             <div className="mt-[3vh]">
                 {!nameFlip && 
-                <div>
-                <RiProfileLine className="relative text-2xl top-6 text-yellow-800" />
+                <div className="relative top-6 left-1">
+                <RiProfileLine className="text-2xl text-yellow-800" />
                 </div>}
                 {nameFlip && 
-                <div>
-                <RiProfileLine className="relative text-2xl top-6 text-yellow-600" />
+                <div className="relative top-6 left-1">
+                <RiProfileLine className="text-2xl text-yellow-600" />
                 </div>}
                     <input type="name" placeholder="Full Name" className="input-box -mt-[3vh]" onChange={(e)=>setName(e.target.value)} onBlur={nameOff} onFocus={nameOn}/>
                 </div>
                 <div className="">
                 {!emailFlip && 
-                <div>
-                <MdAlternateEmail className="relative text-2xl top-10 text-yellow-800" />
+                <div className="relative top-10 left-1">
+                <MdAlternateEmail className="relative text-2xl text-yellow-800" />
                 </div>
                 }
                 {emailFlip && 
-                <div>
-                <MdAlternateEmail className="relative text-2xl top-10 text-yellow-600" />
+                <div className="relative top-10 left-1">
+                <MdAlternateEmail className="text-2xl text-yellow-600" />
                 </div>
                 }
                     <input type="email" placeholder="Email" className="input-box" onChange={(e)=>setEmail(e.target.value)} onBlur={emailOff} onFocus={emailOn} />
                 </div>
                 {!passwordFlip && 
-                    <div>
-                        <FaKey className="relative text-xl top-10 left-1 text-yellow-800"/>
+                    <div className="relative top-10 left-1">
+                        <FaKey className="text-xl text-yellow-800"/>
                     </div>
                     }
                     {passwordFlip && 
-                    <div>
-                         <FaKey className="relative text-xl top-10 left-1 text-yellow-600"/>
+                    <div className="relative top-10 left-1">
+                         <FaKey className="relative text-xl     text-yellow-600"/>
                     </div>
                     }
                 <div>
@@ -107,13 +107,13 @@ const SignUp = () => {
                 {!passwordVisible && 
                 <div>
                 {!passwordFlip &&
-                <div>
-                 <FaEye className="eye-con" onClick={togglePassword} />
+                <div className="relative left-67 bottom-10 ">
+                 <FaEye className="text-xl text-yellow-800" onClick={togglePassword} />
                 </div>
                 }
                 {passwordFlip &&
-                <div>
-                 <FaEye className="eye-con-focus" onClick={togglePassword}/>
+                <div className="relative left-67 bottom-10">
+                 <FaEye className="text-xl text-yellow-800" onClick={togglePassword}/>
                 </div>
                 }
                 </div>
@@ -121,13 +121,13 @@ const SignUp = () => {
                 {passwordVisible && 
                 <div>
                 {!passwordFlip &&
-                <div>
-                 <FaEyeLowVision className="relative left-67 bottom-10 text-xl text-yellow-800" onClick={togglePassword} />
+                <div className="relative left-67 bottom-10">
+                 <FaEyeLowVision className="text-xl text-yellow-800" onClick={togglePassword}/>
                 </div>
                 }
                 {passwordFlip &&
-                <div>
-                 <FaEyeLowVision className="relative left-67 bottom-10 text-xl text-yellow-600" onClick={togglePassword}/>
+               <div className="relative left-67 bottom-10">
+                 <FaEyeLowVision className="text-xl text-yellow-600" onClick={togglePassword}/>
                 </div>
                 }
                 </div>

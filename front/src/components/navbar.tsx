@@ -16,7 +16,7 @@ const Navbar = () =>{
 
     const {toggleLogOut} = useContext(GoldContext);
 
-    const loggedIn = window.localStorage.getItem('loggedIn');
+    const loggedIn = localStorage.getItem('loggedIn');
 
     const kickOut = () =>{
         signOutFunc();

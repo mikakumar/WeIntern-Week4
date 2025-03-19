@@ -69,42 +69,42 @@ const SignIn = () =>{
         <>
         <div className="signin-container">
             <form action={dragIn}>
-        {!emailFlip && <div>               
-            <MdAlternateEmail className="relative text-2xl top-10 left-1 text-yellow-800" />
+        {!emailFlip && <div className="relative top-10 left-1">               
+            <MdAlternateEmail className="text-2xl text-yellow-800" />
             </div>
             }
-            {emailFlip && <div>               
-            <MdAlternateEmail className="relative text-2xl top-10 left-1 text-yellow-600" />
+            {emailFlip && <div className="relative top-10 left-1">               
+            <MdAlternateEmail className="text-2xl text-yellow-600" />
             </div>
             }              
             <div className="">
                     <input type="email" placeholder="Email" className="input-box" onChange={(e)=>setEmail(e.target.value)} onBlur={emailOff} onFocus={emailOn} />
                 </div>
-                {!passwordFlip && <div>
-                    <FaKey className="relative text-xl top-9 left-1 text-yellow-800" />
+                {!passwordFlip && <div className="relative top-9 left-1">
+                    <FaKey className="text-xl text-yellow-800" />
                 </div>
                 }
-                {passwordFlip && <div>
-                    <FaKey className="relative text-xl top-9 left-1 text-yellow-600" />
+                {passwordFlip && <div className="relative top-9 left-1">
+                    <FaKey className="text-xl text-yellow-600" />
                 </div>
                 }
                 <div className="">
                     <input type={passwordVisible?"text":"password"} placeholder="Password" className="input-box" onChange={(e)=>setPassword(e.target.value)} onBlur={passwordOff} onFocus={passwordOn} />
                 </div>
                 {!passwordVisible && <div>
-                    {!passwordFlip && <div>
-                    <FaEye className="relative text-2xl bottom-11  left-65 text-yellow-800" onClick={togglePassword}  />
+                    {!passwordFlip && <div className="relative bottom-11 left-65">
+                    <FaEye className=" text-2xl text-yellow-800" onClick={togglePassword}  />
                     </div>}
-                    {passwordFlip && <div>
-                    <FaEye className="relative text-2xl bottom-11  left-65 text-yellow-600" onClick={togglePassword} />
+                    {passwordFlip && <div className="relative bottom-11 left-65">
+                    <FaEye className="relative text-2xl text-yellow-600" onClick={togglePassword} />
                     </div>}
                 </div>}
                 {passwordVisible && <div>
-                    {!passwordFlip && <div>
-                    <FaEyeLowVision className="relative text-2xl bottom-11  left-65 text-yellow-800" onClick={togglePassword} />
+                    {!passwordFlip && <div className="relative bottom-11 left-65">
+                    <FaEyeLowVision className="text-2xl text-yellow-800" onClick={togglePassword} />
                     </div>}
-                    {passwordFlip && <div>
-                    <FaEyeLowVision className="relative text-2xl bottom-11  left-65 text-yellow-600" onClick={togglePassword} />
+                    {passwordFlip && <div className="relative bottom-11 left-65">
+                    <FaEyeLowVision className="text-2xl text-yellow-600" onClick={togglePassword} />
                     </div>}
                 </div>}
                 <div className="mb-3">

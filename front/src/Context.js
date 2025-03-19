@@ -1,43 +1,61 @@
 "use client";
 
 import {createContext, useState, useEffect} from 'react';
+import { ConvertSubcurrency } from './components/subcurrency';
 
 
 const GoldContext = createContext();
 
 function ContextProvider({children}){
+    const [clientSecret, setClientSecret] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     
     
 
     useEffect(()=>{
         
-        const tlogin = window.localStorage.getItem('loggedIn');
+        const tlogin = localStorage.getItem('loggedIn');
+
+        if(!tlogin){
+            setLoggedIn(false);
+            localStorage.setItem(false);
+        }
 
         if(tlogin == true){
             setLoggedIn(true);
-            window.localStorage.setItem(true);
+            localStorage.setItem(true);
         }
 
         if(tlogin == false){
             setLoggedIn(false);
-            window.localStorage.setItem(false);
+            localStorage.setItem(false);
         }
+
+        
+        fetch("/api/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({amount: ConvertSubcurrency(5.99)}),
+         })
+         .then((res)=>res.json())
+         .then((data)=>setClientSecret(data.clientSecret))
         
     }, []);
 
     const toggleLogIn = () =>{
         setLoggedIn(true);
-        window.localStorage.setItem('loggedIn', true);
+        localStorage.setItem('loggedIn', true);
     }
 
     const toggleLogOut = () =>{
         setLoggedIn(false);
-        window.localStorage.setItem('loggedIn', false);
+        localStorage.setItem('loggedIn', false);
     }
 
     return(
-        <GoldContext.Provider value={{loggedIn, toggleLogIn, toggleLogOut}}>
+        <GoldContext.Provider value={{loggedIn, toggleLogIn, toggleLogOut, clientSecret}}>
             {children}
         </GoldContext.Provider>
     )
