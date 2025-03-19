@@ -10,7 +10,7 @@ router.post('/api/signin', Sign.Signin);
 
 router.post('/logout', Cookie.Logout)
 
-router.post('/api/fetch', Gold.GoldFetch);
-router.post('/api/return', Gold.GoldReturn);
+router.get('/api/fetch', Gold.GoldFetch);
+router.get('/api/return', Gold.GoldReturn);
 
 module.exports = router;

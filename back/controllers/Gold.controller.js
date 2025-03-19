@@ -88,8 +88,7 @@ const date = obj['date'];
     price_gram_10k
  });
 
- 
-
+ res.json(nugget);
 }
 
 const GoldReturn = async(req,res)=>{
