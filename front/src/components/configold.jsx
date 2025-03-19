@@ -17,10 +17,6 @@ const Configold = () =>{
         setDate(fdate);
    } 
 
-   const quickFetch = () =>{
-    
-   }
-
     return(
     <>
     <div className="text-white">

@@ -81,18 +81,3 @@ export const dateGoldFetch = async(symbol, currency, date) =>{
             alert('Something went wrong!')
         }
 }   
-
-export const quickGoldPull = async() =>{
-    const timestamp = Date.now();
-    try{
-        const response =  await fetch('http://localhost:3000/back/api/fetch', {
-            headers: {'Content-Type':'application/json'},
-            method: 'GET',
-            body: JSON.stringify({timestamp}),  
-        })
-
-    } catch(error){
-            alert('Something went wrong!')
-        }
-
-}
